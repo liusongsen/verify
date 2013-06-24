@@ -9,11 +9,11 @@
 class Verify {
 
     const REG_HANDSET = "/^((86)[\+-]?)?^1\d{10}$/i";
-    const REG_EMAIL = "/^[_.0-9a-z-a-z-]+@([0-9a-z][0-9a-z-]+.)+[a-z]{2,4}$/i";
+    const REG_EMAIL = "/^[_\.0-9a-z-a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,4}$/i";
     const REG_TEL = "/^\d{3}-?\d{7,8}(-?\d{1,3})?$/i";
     const REG_QQ_CODE = "/^\d{5,13}$/i";
     const REG_DATE = "/^\d{4}-?((0[1-9])|(1[0-2])|[1-9])-?((0[1-9])|([1-2][0-9])|(3[0-1])|[1-9])$/i";
-    const REG_DATETIME = "/^\d{4}-?((0[1-9])|(1[0-2])|[1-9])-?((0[1-9])|([1-2][0-9])|(3[0-1])|[1-9])[ ](00?|(1[0-9])|(2[0-4])|[1-9]):(00?|([1-5][0-9])|60|[1-9]):(00|([1-5][0-9])|[1-9])/i";
+    const REG_DATETIME = "/^\d{4}-?((0[1-9])|(1[0-2])|[1-9])-?((0[1-9])|([1-2][0-9])|(3[0-1])|[1-9])[ ]((00?)|(1[0-9])|(2[0-4])|([1-9])):((00?)|([1-5][0-9])|(60)|([1-9])):((00?)|([1-5][0-9])|(60)|([1-9]))$/i";
     const REG_NUMBER = "/^\d+$/i";
 
     /**
@@ -120,11 +120,11 @@ class Verify {
     /**
      * 验证格式【自定义格式】
      * 
-     * @param string $input 要验证的信息
      * @param string $format 自定义格式
+     * @param string $input 要验证的信息
      * @return bool  验证成功后返回true失败后返回false
      */
-    public static function vFormat($input, $format) {
+    public static function vFormat($format, $input) {
 
         return preg_match($format, $input) ? true : false;
     }
