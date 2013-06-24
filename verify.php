@@ -20,7 +20,7 @@ class Verify {
      * 验证手机号码
      * 
      * @param string $input 手机号码
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vHandset($input) {
 
@@ -31,7 +31,7 @@ class Verify {
      * 验证邮箱
      * 
      * @param string $input 邮箱
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vEmail($input) {
 
@@ -42,7 +42,7 @@ class Verify {
      * 验证固话
      * 
      * @param string $input 固话
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vTel($input) {
 
@@ -53,7 +53,7 @@ class Verify {
      * 验证QQ号码
      * 
      * @param string $input QQ号码
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vQQCode($input) {
 
@@ -64,7 +64,7 @@ class Verify {
      * 验证日期
      * 
      * @param string $input 日期
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vDate($input) {
 
@@ -75,10 +75,9 @@ class Verify {
      * 验证日期时间
      * 
      * @param string $input 日期时间
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vDateTime($input) {
-
 
         return preg_match(Verify::REG_DATETIME, $input) ? true : false;
     }
@@ -87,10 +86,9 @@ class Verify {
      * 验证数字
      * 
      * @param string $input 数字
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vIsNumber($input) {
-
 
         return preg_match(Verify::REG_NUMBER, $input) ? true : false;
     }
@@ -99,7 +97,7 @@ class Verify {
      * 验证非空
      * 
      * @param string $input 要验证的信息
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vIsNUll($input) {
 
@@ -112,7 +110,7 @@ class Verify {
      * @param string $input 要验证的信息
      * @param int $min 最小长度
      * @param int $max 最大长度
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vlength($input, $min, $max) {
 
@@ -124,7 +122,7 @@ class Verify {
      * 
      * @param string $input 要验证的信息
      * @param string $format 自定义格式
-     * @return mix[bool|string]  验证成功后返回true失败后返回自定义信息
+     * @return bool  验证成功后返回true失败后返回false
      */
     public static function vFormat($input, $format) {
 
