@@ -32,13 +32,13 @@ Verify::vDateTime("2013-06-24 12:23:36")
 Verify::vIsNumber(35641)
 
 
-非空验证：
+空验证：
 Verify::vIsNUll($arr)
 
 
 长度验证：
-Verify::vIsNUll("hello",3,5)
+Verify::vlength("hello",3,5)
 
 
 自定义验证：
-Verify::vIsNUll("/\d{3}/i","sdf")
+Verify::vFormat("/\d{3}/i","sdf")
