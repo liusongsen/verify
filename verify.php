@@ -279,7 +279,7 @@ class Verify {
                 }
             }
         }
-        return $result ? true : $result;
+        return $result ? $result : false;
     }
 
 }
