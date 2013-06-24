@@ -64,7 +64,7 @@ if (Verify::vIsNumber(456)) {
 }
 
 //验证空字符串
-if (Verify::vIsNUll("")) {
+if (Verify::vIsNNUll("")) {
     echo "验证成功";
 } else {
     echo "验证失败";
@@ -85,4 +85,17 @@ if (Verify::vFormat("/\d{4}/i", 2245)) {
     echo "验证失败";
 }
 
+//验证数组
+$data = array(
+    array('msg' => '手机号码格式错误', 'value' => "86-13202018503sdfsdf", 'verify' => Verify::IS_HANDWET),
+    array('msg' => '邮箱格式错误', 'value' => "2457999856@qq.comsdfsdf", 'verify' => Verify::IS_EMAIL),
+    array('msg' => '固话格式错误', 'value' => "020-56895142-12sdfsdf", 'verify' => Verify::IS_TEL),
+    array('msg' => 'QQ号码格式错误', 'value' => "125687458asdfasdfasdf", 'verify' => Verify::IS_QQ),
+    array('msg' => 'QQ昵称输入不能为空', 'value' => "picker", 'verify' => Verify::IS_NNULL),
+    array('msg' => '邮编要求必须是数字', 'value' => 546874, 'verify' => Verify::IS_NUMBER),
+    array('msg' => '邮编长度要求>5and<10', 'value' => 54687423234234, 'verify' => Verify::IS_LENGTH, 'len_min' => 6, 'len_max' => 6),
+    array('msg' => '自定义格式错误', 'value' => "123asfasdf", 'verify' => Verify::IS_FORMAT, 'format' => "/\d{3}/i"),
+);
+
+print_r(Verify::vArr($data),false);
 ?>
